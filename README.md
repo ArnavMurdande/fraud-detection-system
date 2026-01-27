@@ -79,6 +79,8 @@ The core of this project is the realistic injection of 8 distinct fraud patterns
 
 Raw columns (`amount`, `timestamp`) are insufficient for detection. We engineered 30+ features focusing on time and behavior.
 
+While the code uses a default 0.5 threshold, we can explicitly make a change in the  production environment, we can lower the threshold to increase **Recall** (catching more fraud) at the expense of **Precision** (more false alarms).
+
 ### 🔑 Key Features
 
 1. **Velocity**: `count_tx_last_1_hour`, `txns_last_10min` (Rolling windows).
@@ -93,7 +95,7 @@ All features are calculated using **past data only**. We strictly use `rolling()
 
 ## 🤖 6. Model Development & Choice (Part 4)
 
-We selected **XGBoost (Extreme Gradient Boosting)** as the core classifier.
+I selected **XGBoost (Extreme Gradient Boosting)** as the core classifier.
 
 ### 🧠 Rationale
 
@@ -129,7 +131,7 @@ Evaluation was conducted on a strictly time-split **Test Set (Future Data)** to 
 ![Confusion Matrix](results/confusion_matrix.png)
 
 **Trade-off Analysis**:
-We prioritized **Recall** (catching fraud) while maintaining high Precision to avoid blocking legitimate users (customer friction).
+I prioritized **Recall** (catching fraud) while maintaining high Precision to avoid blocking legitimate users (customer friction).
 
 ---
 
@@ -159,7 +161,7 @@ Shows how `hours_since_last_tx` interacts with risk—risk spikes at very low va
 
 ## 🕸️ 9. Graph-Based Fraud Detection (Bonus)
 
-We extended the tabular model with Graph Intelligence using **Neo4j**.
+I extended the tabular model with Graph Intelligence using **Neo4j**.
 
 ### 🧩 Schema
 
