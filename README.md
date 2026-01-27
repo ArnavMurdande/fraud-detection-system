@@ -27,6 +27,12 @@ The system follows a modular pipeline design:
 5. **Validation**: (`src/test_on_real_data.py`) Evaluates performance on external datasets (PaySim/BankSim).
 6. **Graph Analysis**: (`src/graph_ingestion.py`) Performs post-hoc graph analysis using Neo4j.
 
+
+---
+
+### 🗺️ System Architecture
+![System Architecture Diagram](https://github.com/ArnavMurdande/fraud-detection-system/raw/27cbd1b1f00bef1d523febaf4638afa926c0e5b2/Diagram.png)
+
 ---
 
 ## 🧪 3. Synthetic Data Generation (Part 1)
