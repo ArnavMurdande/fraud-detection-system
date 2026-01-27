@@ -1,0 +1,7 @@
+__pycache__/
+*.DS_Store
+*.pyc
+
+# Real-world datasets (large files)
+data/real_data/*.csv
+data/real_data/*.arff

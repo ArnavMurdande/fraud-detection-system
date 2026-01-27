@@ -1,0 +1,27 @@
+NEO4J GRAPH ANALYSIS REPORT
+===========================
+TOP SHARED DEVICES (Potential Fraud Rings):
+------------------------------
+HIGH RISK MERCHANTS:
+Merchant: M_0033 | Total: 39 | Fraud: 19 | Rate: 0.49
+Merchant: M_0053 | Total: 18 | Fraud: 6 | Rate: 0.33
+Merchant: M_0020 | Total: 20 | Fraud: 6 | Rate: 0.30
+Merchant: M_0036 | Total: 21 | Fraud: 6 | Rate: 0.29
+Merchant: M_0050 | Total: 18 | Fraud: 5 | Rate: 0.28
+Merchant: M_0022 | Total: 17 | Fraud: 4 | Rate: 0.24
+Merchant: M_0004 | Total: 14 | Fraud: 3 | Rate: 0.21
+Merchant: M_0008 | Total: 28 | Fraud: 6 | Rate: 0.21
+Merchant: M_0057 | Total: 15 | Fraud: 3 | Rate: 0.20
+Merchant: M_0011 | Total: 164 | Fraud: 32 | Rate: 0.20
+------------------------------
+USERS CONNECTED TO KNOWN FRAUD (via Shared Device):
+------------------------------
+
+MODEL INTEGRATION NOTES:
+Graph-based features (e.g., 'connected_frauds', 'device_user_degree') 
+provide relational context that tabular models often miss.
+Strategy:
+1. Compute graph features (e.g. PageRank, Community ID) in Neo4j.
+2. Export these features to the CSV.
+3. Retrain XGBoost with these new 'Risk' columns.
+This creates a feedback loop: ML detects pattern -> Graph connects entities -> Stronger ML features.

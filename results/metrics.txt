@@ -1,0 +1,51 @@
+FRAUD DETECTION MODEL – EVALUATION METRICS
+=========================================
+
+Model:
+------
+XGBoost Classifier (binary:logistic)
+Time-aware training with early stopping
+
+Dataset:
+--------
+Total Samples: 18,423
+Fraud Rate: 3.47%
+
+Data Split:
+-----------
+Training Set: 13,265 samples
+Validation Set: 1,473 samples
+Test Set (Future Data): 3,685 samples
+
+Class Imbalance Handling:
+-------------------------
+scale_pos_weight = 30.66
+
+Evaluation Results (Test Set):
+------------------------------
+ROC-AUC Score: 0.9797
+
+Confusion Matrix:
+-----------------
+True Negatives (Legit correctly classified): 3475
+False Positives (Legit flagged as fraud):     8
+False Negatives (Fraud missed):               48
+True Positives (Fraud correctly caught):      154
+
+Classification Metrics (Fraud Class = 1):
+-----------------------------------------
+Precision: 0.95
+Recall:    0.76
+F1-Score:  0.85
+
+Interpretation:
+---------------
+- High Precision (0.95) ensures very low false alarms,
+  reducing customer friction and manual review costs.
+- Recall (0.76) indicates the model detects most fraud
+  while maintaining stability.
+- ROC-AUC (0.98) demonstrates strong separation between
+  fraudulent and legitimate transactions.
+
+The model was evaluated on unseen future data, confirming
+generalization and absence of overfitting.
